@@ -14,6 +14,7 @@ fs.readFile("database/user.json","utf-8",(err,data)=>{
         user = JSON.parse(data)
     }
 })
+
 // 1 Kirish code
 app.use(express.static("public"));
 app.use(express.json());
@@ -33,12 +34,12 @@ app.get("/", function (req, res) {
     res.render(`harid`);
 });
 app.get("/author",(req,res)=>{
-    res.render("author",{user:user})
+
+    res.render("author", { user:user });
 })
-  
 
 const server = http.createServer(app);
-let PORT = 3001;
+let PORT = 3000;
 server.listen(PORT, function () {
   console.log(`The server is running successfully on port:${PORT}`);
 });

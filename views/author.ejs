@@ -1,18 +1,186 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/ma">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
+    <style>
+    </style>
 </head>
-
 <body>
-    <div class="frame">
-        <div class="main_frame"></div>
-    </div>   
-</body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile_img">
+                <img src="/author/images/Profile.jpg" alt="Profile Picture">
+            </div>
+            <div class="name"><%= user.name %></div>
+            <div class="social_media">
+                <a href="#" class="social_item"><img src="/author/icon/Facebook.svg" alt=""></a>
+                <a href="#" class="social_item"><img src="/author/icon/Instagram.svg" alt=""></a>
+                <a href="#" class="social_item"><img src="/author/icon/Twitter.svg" alt=""></a>
+                <a href="#" class="social_item"><img src="/author/icon/Linkeding.svg" alt=""></a>
+                <a href="#" class="social_item"><img src="/author/icon/Youtube.svg" alt=""></a>
+                <a href="#" class="social_item"><img src="/author/icon/Dribbble.svg" alt=""></a>
+            </div>
+            <div class="side_bar_item info">
+                <ul>
+                    <li><strong>Age:</strong> <%= user.age %></li>
+                    <li><strong>Residence:</strong> <%= user.residence %></li>
+                    <li><strong>Freelance:</strong> <span class="green">Available</span></li>
+                    <li><strong>Address:</strong><%= user.address %></li>
+                </ul>
+            </div>
+            <div class="side_bar_item languages">
+                <h3>Languages</h3>
+                <ul>
+                    
+                    
 
-</html> -->
+                        <% user.languages.forEach((item) => { %>
+                           
+                            <li> <%= item %>: <span>100%</span>
+                                <div class="progress-container">
+                                    
+                                    <div class="progress-bar" data-width="100"></div>
+                                </div>
+                            </li>
+                        <% }); %>
+                </ul>
+            </div>
+            <div class="side_bar_item skills">
+                <h3>Skills</h3>
+                <ul>
+                    
+                    
+                    <% user.skills.forEach((item) => { %>
+                           
+                        <li><%= item %>: <span>90%</span>
+                            <div class="progress-container">
+                                
+                                <div class="progress-bar" data-width="90"></div>
+                            </div>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+            <div class="side_bar_item extra-skills">
+                <h3>Extra Skills</h3>
+                <ul>
+                    
+                    <% user.extra_skills.forEach((item) => { %>
+                           
+                        <li> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                            <rect x="0.5" y="0.5" width="9" height="9" stroke="#FFB400"/>
+                            <rect x="5.5" y="5.5" width="9" height="9" stroke="#FFB400"/>
+                            </svg> <%= item %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="banner">
+                <div class="banner_text">
+                    <h2>Doctor neurologists in OHSU Hospital</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</p>
+                    <a href="#">HIRE ME <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                        <g clip-path="url(#clip0_2_2655)">
+                          <path d="M10.8554 7.72765L7.27939 4.15165L8.22206 3.20898L13.4074 8.39432L8.22206 13.5797L7.27939 12.637L10.8554 9.06098H2.74072V7.72765H10.8554Z" fill="#2B2B2B"/>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_2_2655">
+                            <rect width="16" height="16" fill="white" transform="translate(0.0742188 0.394531)"/>
+                          </clipPath>
+                        </defs>
+                      </svg></a>
+                </div>
+                <div class="banner_img">
+                    <img src="/author/images/Your Image 1.png" alt="">
+                </div>
+            </div>
+            <section class="section-service">
+                <h2>My Services</h2> <br>
+                <p>
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum
+                </p>
+                <div class="services">
+                    <div class="service">
+                        <img src="/author/icon/coding.svg" alt="">
+                        <h3>Web Development</h3>
+                        <p>Blog, E-Commerce</p>
+                    </div>
+                    <div class="service">
+                        <img src="/author/icon/illustration.svg" alt="">
+                        <h3>UI/UX Design</h3>
+                        <p>Mobile App, Website Design</p>
+                    </div>
+                    <div class="service">
+                        <img src="/author/icon/Microphone.svg" alt="">
+                        <h3>Sound Design</h3>
+                        <p>Voice Over, Beat Making</p>
+                    </div>
+                    <div class="service">
+                        <img src="/author/icon/game-development.svg" alt="">
+                        <h3>Game Design</h3>
+                        <p>Character Design, Props & Objects</p>
+                    </div>
+                    <div class="service">
+                        <img src="/author/icon/Photographer.svg" alt="">
+                        <h3>Photography</h3>
+                        <p>Portrait, Product Photography</p>
+                    </div>
+                    <div class="service">
+                       
+                        <h3>Advertising</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Right Navigation -->
+    <div class="right-nav">
+        <div>
+            <button ><img src="/author/icon/Contrast.svg" alt=""></button>
+        </div>
+        <a href="#home"><img src="/author/icon/Home.svg" alt="Home"></a>
+        <a href="#about"><img src="/author/icon/file-code.svg" alt="About"></a>
+        <a href="#services"><img src="/author/icon/cv.svg" alt="Services"></a>
+        <a href="#vector"><img src="/author/icon/Vector.png" alt="Services"></a>
+        <a href="#portfolio"><img src="/author/icon/Blog.svg" alt="Portfolio"></a>
+        <a href="#contact"><img src="/author/icon/Contact.svg" alt="Contact"></a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(function(progressBar) {
+                const width = progressBar.getAttribute('data-width'); // Получаем значение data-width
+                progressBar.style.width = width + '%'; // Устанавливаем ширину прогресс-бара
+            });
+        };
+       
+        let languages = document.querySelectorAll(".languages li")
+        languages.forEach((item)=>{
+            
+            item.querySelector('span').innerHTML = Math.floor(Math.random() * 101);
+            item.querySelector('.progress-bar').dataset.width = item.querySelector('span').innerHTML
+            console.log( item.querySelector('.progress-bar').dataset.width)
+        })
+
+        let skills = document.querySelectorAll(".skills li")
+        skills.forEach((item)=>{
+            
+            item.querySelector('span').innerHTML = Math.floor(Math.random() * 101);
+            item.querySelector('.progress-bar').dataset.width = item.querySelector('span').innerHTML
+            console.log( item.querySelector('.progress-bar').dataset.width)
+        })
+        
+
+    </script>
+</body>
+</html>
