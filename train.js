@@ -26,15 +26,15 @@ console.log("TRAIN Area !");
 
 // =============
 
-console.log("Jack Ma maslahatlari");
-const list = [
-  "yaxshi talaba boling", // 0-20
-  "togri boshliq tanlang va koproq hato qiling", // 20-30
-  "uzingizga ishingizni boshlang", // 30-40
-  "siz kuchli bolgan narsalarni qiling", // 40-50
-  "yoshlarga investitsiya qiling", // 50-60
-  "endi dam oling, foydasi yoq endi", // 60
-];
+// console.log("Jack Ma maslahatlari");
+// const list = [
+//   "yaxshi talaba boling", // 0-20
+//   "togri boshliq tanlang va koproq hato qiling", // 20-30
+//   "uzingizga ishingizni boshlang", // 30-40
+//   "siz kuchli bolgan narsalarni qiling", // 40-50
+//   "yoshlarga investitsiya qiling", // 50-60
+//   "endi dam oling, foydasi yoq endi", // 60
+// ];
 
 // CallBack function
 
@@ -62,28 +62,28 @@ const list = [
 
 // Async function
 
-async function maslahatBering(a) {
-  if (typeof a !== "number") throw new Error("Insert a number");
-  else if (a <= 20) return list[0];
-  else if (a > 20 && a <= 30) return list[1];
-  else if (a > 30 && a <= 40) return list[2];
-  else if (a > 40 && a <= 50) return list[3];
-  else if (a > 50 && a <= 60) return list[4];
-  else {
-    return new Promise((resolve,reject) => {
-        // setInterval(() => {
-        // resolve(list[5])
-        // }, 1000);
-        setTimeout(() => {
-        resolve(list[5])
-        }, 5000);
+// async function maslahatBering(a) {
+//   if (typeof a !== "number") throw new Error("Insert a number");
+//   else if (a <= 20) return list[0];
+//   else if (a > 20 && a <= 30) return list[1];
+//   else if (a > 30 && a <= 40) return list[2];
+//   else if (a > 40 && a <= 50) return list[3];
+//   else if (a > 50 && a <= 60) return list[4];
+//   else {
+//     return new Promise((resolve,reject) => {
+//         // setInterval(() => {
+//         // resolve(list[5])
+//         // }, 1000);
+//         setTimeout(() => {
+//         resolve(list[5])
+//         }, 5000);
         
-    });
+//     });
    
-  }
+//   }
 
   
-}
+// }
 
 // then/catch
 
@@ -100,12 +100,37 @@ async function maslahatBering(a) {
 
 // async/await
 
-async function run(){
-    let javob = await maslahatBering(65);
-    console.log(javob);
-    //  javob = await maslahatBering(65);
-    // console.log(javob);
-    //  javob = await maslahatBering(35);
-    // console.log(javob);
+// async function run(){
+//     let javob = await maslahatBering(65);
+//     console.log(javob);
+//     //  javob = await maslahatBering(65);
+//     // console.log(javob);
+//     //  javob = await maslahatBering(35);
+//     // console.log(javob);
+// }
+// run()
+
+
+
+
+// DEFINE
+function qoldiqBolish(a, b, callback) {
+  if (b === 0) {
+    callback("Mahraj nolga teng bolmasin!", null);
+  } else if (a === 0){
+    callback("Surat nolga teng bolmasin!", null);
+  } else {
+    const c = a % b;
+    callback(null, c);
+  }
 }
-run()
+
+// CALL
+qoldiqBolish(10, 3, (err, data) => {
+  if (err) {
+    console.log("ERROR:", err);
+  } else {
+    console.log("data:", data);
+    console.log("ANY LOGIC");
+  }
+});

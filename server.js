@@ -31,7 +31,7 @@ app.post("/create-item",(req, res)=>{
     res.json({test:"success"});
 })
 app.get("/", function (req, res) {
-    res.render(`harid`);
+    res.render(`reja`);
 });
 app.get("/author",(req,res)=>{
 
