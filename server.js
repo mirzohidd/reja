@@ -6,7 +6,7 @@ const connecttionString = "mongodb+srv://mirzohidmurodov77:p2EiDQwLC3zKX4wH@clus
 mongodb.connect(
   connecttionString,
   {
-    userNewUrlParser: true,
+    useNewUrlParser: true,
     useUnifiedTopology: true,
   },
   (err, client) => {

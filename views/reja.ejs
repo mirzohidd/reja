@@ -1,184 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beautiful TO-DO List</title>
     <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2ecc71;
-            --delete-color: #e74c3c;
-            --background-color: #ecf0f1;
-            --text-color: #34495e;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-        
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-            text-align: center;
-            color: var(--primary-color);
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
-        
-        .input-container {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        
-        #new-task {
-            flex-grow: 1;
-            padding: 12px;
-            font-size: 16px;
-            border: 2px solid var(--primary-color);
-            border-radius: 5px 0 0 5px;
-            outline: none;
-        }
-        
-        #add-task {
-            padding: 12px 20px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-        
-        #add-task:hover {
-            background-color: #2980b9;
-        }
-        
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin-bottom: 20px;
-        }
-        
-        li {
-            background-color: #f9f9f9;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: transform 0.2s ease;
-        }
-        
-        li:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .task-text {
-            flex-grow: 1;
-            margin-right: 10px;
-        }
-        
-        .btn {
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .edit-btn {
-            background-color: var(--secondary-color);
-            margin-right: 5px;
-        }
-        
-        .edit-btn:hover {
-            background-color: #27ae60;
-        }
-        
-        .delete-btn {
-            background-color: var(--delete-color);
-        }
-        
-        .delete-btn:hover {
-            background-color: #c0392b;
-        }
-        
-        .complete-btn {
-            background-color: var(--primary-color);
-            margin-right: 5px;
-        }
-        
-        .complete-btn:hover {
-            background-color: #2980b9;
-        }
-        
-        .completed {
-            text-decoration: line-through;
-            opacity: 0.6;
-        }
-        
-        .delete-all-container {
-            text-align: center;
-        }
-        
-        #delete-all {
-            background-color: var(--delete-color);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        #delete-all:hover {
-            background-color: #c0392b;
-        }
+      :root {
+        --primary-color: #3498db;
+        --secondary-color: #2ecc71;
+        --delete-color: #e74c3c;
+        --background-color: #ecf0f1;
+        --text-color: #34495e;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: var(--primary-color);
+        font-size: 2.5em;
+        margin-bottom: 30px;
+      }
+
+      .input-container {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      #create-field {
+        flex-grow: 1;
+        padding: 12px;
+        font-size: 16px;
+        border: 2px solid var(--primary-color);
+        border-radius: 5px 0 0 5px;
+        outline: none;
+      }
+
+      #add-task {
+        padding: 12px 20px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      #add-task:hover {
+        background-color: #2980b9;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+
+      li {
+        background-color: #f9f9f9;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: transform 0.2s ease;
+      }
+
+      li:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .task-text {
+        flex-grow: 1;
+        margin-right: 10px;
+      }
+
+      .btn {
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+      }
+
+      .edit-btn {
+        background-color: var(--secondary-color);
+        margin-right: 5px;
+      }
+
+      .edit-btn:hover {
+        background-color: #27ae60;
+      }
+
+      .delete-btn {
+        background-color: var(--delete-color);
+      }
+
+      .delete-btn:hover {
+        background-color: #c0392b;
+      }
+
+      .complete-btn {
+        background-color: var(--primary-color);
+        margin-right: 5px;
+      }
+
+      .complete-btn:hover {
+        background-color: #2980b9;
+      }
+
+      .completed {
+        text-decoration: line-through;
+        opacity: 0.6;
+      }
+
+      .delete-all-container {
+        text-align: center;
+      }
+
+      #delete-all {
+        background-color: var(--delete-color);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #delete-all:hover {
+        background-color: #c0392b;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-       <form action="/create-item" method="post">
-		<h1>Reja</h1>
+      <form id="create-form" action="/create-item" method="POST">
+        <h1>Reja</h1>
         <div class="input-container">
-            <input type="text" id="new-task" placeholder="Enter a new task">
-            <button id="add-task" type="submit">Yangi Maqsad Qo'shish</button>
+          <input
+            type="text"
+            id="create-field"
+            name="reja"
+            placeholder="Enter a new task" />
+          <button id="add-task" type="submit">Yangi Maqsad Qo'shish</button>
         </div>
         <ul id="task-list">
-            
-            <li>
-                <span class="task-text">Review client feedback</span>
-                <div>
-                    <!-- <button class="btn complete-btn">Complete</button> -->
-                    <button class="btn edit-btn">Edit</button>
-                    <button class="btn delete-btn">Delete</button>
-                </div>
-            </li>
+			<% items.map(function(item){ %>
+				<li>
+					<span class="task-text"><%= item.reja %></span>
+					<div>
+					  
+					  <button data-id="<%= item._id %>" class="btn edit-btn">Edit</button>
+					  <button data-id="<%= item._id %>" class="btn delete-btn">
+						Delete
+					  </button>
+					</div>
+				  </li>
+			<%}) %>
+			
+			
         </ul>
         <div class="delete-all-container">
-            <button id="delete-all">Barchasini  O'chirish</button>
+          <button id="delete-all">Barchasini O'chirish</button>
         </div>
-	   </form>
+      </form>
     </div>
-</body>
+  </body>
 </html>
-

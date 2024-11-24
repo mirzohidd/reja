@@ -1,9 +1,9 @@
 console.log("Web Serverni boshlash");
 
+const e = require("express");
 const express = require("express");
 const res = require("express/lib/response");
 const app = express();
-
 
 //  MongoDB connect
 const db = require("./server").db();
@@ -19,24 +19,35 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4 Routing code
-app.post("/create-item",(req, res)=>{
-    console.log(req.body);
-    res.json({test:"success"});
-})
-app.get("/", function (req, res) {
-    db.collection("plans").find().toArray((err,data)=>{
-        if(err){
-            console.log(err);
-            res.end("something went wrong");
-        }else{
-            console.log(data);
-            res.render(`reja`);
+app.post("/create-item", (req, res) => {
+  console.log("user entered /create-item");
 
-        }
-    })
+  console.log(req.body);
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end("Something went wrong ");
+    } else {
+      res.redirect("/");
+    }
+  });
 });
-app.get("/author",(req,res)=>{
-    res.render("author", { user:user });
-})
+app.get("/", function (req, res) {
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log(err);
+        res.end("something went wrong");
+      } else {
+        res.render("reja", { items: data });
+      }
+    });
+});
+app.get("/author", (req, res) => {
+  res.render("author", { user: user });
+});
 
 module.exports = app;
