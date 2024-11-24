@@ -24,10 +24,18 @@ app.post("/create-item",(req, res)=>{
     res.json({test:"success"});
 })
 app.get("/", function (req, res) {
-    res.render(`reja`);
+    db.collection("plans").find().toArray((err,data)=>{
+        if(err){
+            console.log(err);
+            res.end("something went wrong");
+        }else{
+            console.log(data);
+            res.render(`reja`);
+
+        }
+    })
 });
 app.get("/author",(req,res)=>{
-
     res.render("author", { user:user });
 })
 

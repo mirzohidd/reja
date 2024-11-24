@@ -131,21 +131,22 @@ console.log("TRAIN Area !");
 //   }
 // });
 
+
 // B TASK
 
 // Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
 // MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
 
-// let counterNumber = 0;
-// function numberReturner(word) {
-//   let newArr = [...word]
-//   newArr.filter((item) => {
-//     if(!isNaN(item)){
-//       counterNumber ++;
+let counterNumber = 0;
+function numberReturner(word) {
+  let newArr = [...word]
+  newArr.filter((item) => {
+    if(!isNaN(item)){
+      counterNumber ++;
       
-//     }
+    }
    
-//   })
-//   console.log(counterNumber)
-// }
-// numberReturner("111dddenjsdjnasjnda5757676");
+  })
+  console.log(counterNumber)
+}
+numberReturner("111dddenjsdjnasjnda5757676");
