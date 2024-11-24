@@ -77,12 +77,11 @@ console.log("TRAIN Area !");
 //         setTimeout(() => {
 //         resolve(list[5])
 //         }, 5000);
-        
+
 //     });
-   
+
 //   }
 
-  
 // }
 
 // then/catch
@@ -110,27 +109,43 @@ console.log("TRAIN Area !");
 // }
 // run()
 
+// // DEFINE
+// function qoldiqBolish(a, b, callback) {
+//   if (b === 0) {
+//     callback("Mahraj nolga teng bolmasin!", null);
+//   } else if (a === 0){
+//     callback("Surat nolga teng bolmasin!", null);
+//   } else {
+//     const c = a % b;
+//     callback(null, c);
+//   }
+// }
 
+// // CALL
+// qoldiqBolish(10, 3, (err, data) => {
+//   if (err) {
+//     console.log("ERROR:", err);
+//   } else {
+//     console.log("data:", data);
+//     console.log("ANY LOGIC");
+//   }
+// });
 
+// B TASK
 
-// DEFINE
-function qoldiqBolish(a, b, callback) {
-  if (b === 0) {
-    callback("Mahraj nolga teng bolmasin!", null);
-  } else if (a === 0){
-    callback("Surat nolga teng bolmasin!", null);
-  } else {
-    const c = a % b;
-    callback(null, c);
-  }
-}
+// Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+// MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
 
-// CALL
-qoldiqBolish(10, 3, (err, data) => {
-  if (err) {
-    console.log("ERROR:", err);
-  } else {
-    console.log("data:", data);
-    console.log("ANY LOGIC");
-  }
-});
+// let counterNumber = 0;
+// function numberReturner(word) {
+//   let newArr = [...word]
+//   newArr.filter((item) => {
+//     if(!isNaN(item)){
+//       counterNumber ++;
+      
+//     }
+   
+//   })
+//   console.log(counterNumber)
+// }
+// numberReturner("111dddenjsdjnasjnda5757676");

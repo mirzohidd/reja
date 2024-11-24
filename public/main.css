@@ -60,8 +60,8 @@ body {
   font-size: 24px;
   margin-bottom: 10px;
 }
-.main-content .services {
-}
+
+
 .main-content .service {
   width: calc(50% - 10px);
   background-color: #fff;
@@ -261,8 +261,7 @@ body {
   align-items: center;
   text-decoration: none;
 }
-.services {
-}
+
 .section-service h2 {
   color: var(--Black, #2b2b2b);
   font-size: 32px;

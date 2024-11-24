@@ -1,12 +1,13 @@
 console.log("Web Serverni boshlash");
 
 const express = require("express");
-// const res = require("express/lib/response");
+const res = require("express/lib/response");
 const app = express();
 
 
 //  MongoDB connect
-const db = this.require("./server").db();
+const db = require("./server").db();
+
 // 1 Kirish code
 app.use(express.static("public"));
 app.use(express.json());
