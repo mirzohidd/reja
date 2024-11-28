@@ -168,20 +168,19 @@
           <button id="add-task" type="submit">Yangi Maqsad Qo'shish</button>
         </div>
         <ul id="item-list">
-			<% items.map(function(item){ %>
-				<li>
-					<span class="task-text"><%= item.reja %></span>
-					<div>
-					  
-					  <button data-id="<%= item._id %>" class="btn edit-btn">Edit</button>
-					  <button data-id="<%= item._id %>" class="btn delete-btn">
-						Delete
-					  </button>
-					</div>
-				  </li>
-			<%}) %>
-			
-			
+          <% items.map(function(item){ %>
+          <li>
+            <span class="task-text"><%= item.reja %></span>
+            <div>
+              <button data-id="<%=item._id %>" class="btn edit-btn">
+                Edit
+              </button>
+              <button data-id="<%=item._id %>" class="btn delete-btn">
+                Delete
+              </button>
+            </div>
+          </li>
+          <%}) %>
         </ul>
         <div class="delete-all-container">
           <button id="delete-all">Barchasini O'chirish</button>
