@@ -167,7 +167,7 @@
             placeholder="Enter a new task" />
           <button id="add-task" type="submit">Yangi Maqsad Qo'shish</button>
         </div>
-        <ul id="task-list">
+        <ul id="item-list">
 			<% items.map(function(item){ %>
 				<li>
 					<span class="task-text"><%= item.reja %></span>
@@ -188,5 +188,7 @@
         </div>
       </form>
     </div>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="/browser.js"></script>
   </body>
 </html>

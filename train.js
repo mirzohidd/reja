@@ -131,22 +131,54 @@ console.log("TRAIN Area !");
 //   }
 // });
 
-
 // B TASK
 
 // Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
 // MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
 
-let counterNumber = 0;
-function numberReturner(word) {
-  let newArr = [...word]
-  newArr.filter((item) => {
-    if(!isNaN(item)){
-      counterNumber ++;
-      
+// let counterNumber = 0;
+// function numberReturner(word) {
+//   let newArr = [...word]
+//   newArr.filter((item) => {
+//     if(!isNaN(item)){
+//       counterNumber ++;
+
+//     }
+
+//   })
+//   console.log(counterNumber)
+// }
+// numberReturner("111dddenjsdjnasjnda5757676");
+
+// C TASK
+
+// Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
+// MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+
+function checkContent(word1, word2) {
+  let newWord1 = [...word1];
+  let newWord2 = [...word2];
+
+  if (newWord1.length == newWord2.length) {
+    let newArr = word1.concat(word2);
+    // console.log(newArr)
+
+    if (newWord1.some((char) => newWord2.includes(char))) {
+      console.log("true")
+      return true
+    } else {
+      console.log("false")
+      return false
     }
-   
-  })
-  console.log(counterNumber)
+    // for (let index = 0; index < newArr.length; index++) {
+    //   const element = newArr[index];
+    //   if (element == element) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // }
+  }
 }
-numberReturner("111dddenjsdjnasjnda5757676");
+
+checkContent("mitgroup", "gmtiprou");
