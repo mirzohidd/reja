@@ -1,6 +1,5 @@
 console.log("Web Serverni boshlash");
 
-const e = require("express");
 const express = require("express");
 const res = require("express/lib/response");
 const app = express();
@@ -38,6 +37,25 @@ app.post("/delete-item", (req, res) => {
     }
   );
 });
+app.post("/edit-item", (req, res) => {
+  const data = req.body;
+
+  db.collection("plans").findOneAndUpdate(
+    { _id: new mongodb.ObjectId(data.id) },
+    { $set: { reja: data.new_input } },
+    function (err, data) {
+      res.json({ state: "success" });
+    }
+  );
+});
+app.post("/delete-all", (req, res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany({}, (err, result) => {
+      res.json({ status: "Hamma rejalar ochirildi" });
+    });
+  }
+});
+
 app.get("/", function (req, res) {
   console.log("user entered /");
   db.collection("plans")
@@ -51,6 +69,7 @@ app.get("/", function (req, res) {
       }
     });
 });
+
 app.get("/author", (req, res) => {
   res.render("author", { user: user });
 });

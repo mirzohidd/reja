@@ -155,30 +155,97 @@ console.log("TRAIN Area !");
 // Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
 // MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
 
-function checkContent(word1, word2) {
-  let newWord1 = [...word1];
-  let newWord2 = [...word2];
+// function checkContent(word1, word2) {
+//   let newWord1 = [...word1];
+//   let newWord2 = [...word2];
 
-  if (newWord1.length == newWord2.length) {
-    let newArr = word1.concat(word2);
-    // console.log(newArr)
+//   if (newWord1.length == newWord2.length) {
+//     let newArr = word1.concat(word2);
+//     // console.log(newArr)
 
-    if (newWord1.some((char) => newWord2.includes(char))) {
-      console.log("true")
-      return true
-    } else {
-      console.log("false")
-      return false
+//     if (newWord1.some((char) => newWord2.includes(char))) {
+//       console.log("true")
+//       return true
+//     } else {
+//       console.log("false")
+//       return false
+//     }
+//     // for (let index = 0; index < newArr.length; index++) {
+//     //   const element = newArr[index];
+//     //   if (element == element) {
+//     //     return true;
+//     //   } else {
+//     //     return false;
+//     //   }
+//     // }
+//   }
+// }
+
+// checkContent("mitgroup", "gmtiprou");
+
+
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.products = {
+      non: non,
+      lagmon: lagmon,
+      cola: cola,
+    };
+  }
+
+
+  qoldiq() {
+    const currentTime = new Date().toLocaleTimeString(); 
+    const { non, lagmon, cola } = this.products;
+    console.log(
+      `Hozir ${currentTime}da ${non}ta non, ${lagmon}ta lagmon va ${cola}ta cola mavjud!`
+    );
+    return this.products;
+  }
+
+ 
+  sotish(mahsulot, miqdor) {
+    const currentTime = new Date().toLocaleTimeString(); 
+
+    if (this.products[mahsulot] === undefined) {
+      console.log(`Bunday mahsulot mavjud emas: ${mahsulot}`);
+      return;
     }
-    // for (let index = 0; index < newArr.length; index++) {
-    //   const element = newArr[index];
-    //   if (element == element) {
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-    // }
+
+    if (this.products[mahsulot] < miqdor) {
+      console.log(
+        `Hozir ${currentTime}da ${mahsulot} yetarli emas, bor-yo‘g‘i ${this.products[mahsulot]}ta mavjud.`
+      );
+      return;
+    }
+
+    this.products[mahsulot] -= miqdor;
+    console.log(
+      `Hozir ${currentTime}da ${miqdor}ta ${mahsulot} sotildi. Hozirda ${this.products[mahsulot]}ta qoldi.`
+    );
+  }
+
+ 
+  qabul(mahsulot, miqdor) {
+    const currentTime = new Date().toLocaleTimeString(); 
+
+    if (this.products[mahsulot] === undefined) {
+      console.log(`Bunday mahsulot mavjud emas: ${mahsulot}`);
+      return;
+    }
+
+    this.products[mahsulot] += miqdor;
+    console.log(
+      `Hozir ${currentTime}da ${miqdor}ta ${mahsulot} qabul qilindi. Hozirda ${this.products[mahsulot]}ta mavjud.`
+    );
   }
 }
 
-checkContent("mitgroup", "gmtiprou");
+
+const shop = new Shop(4, 5, 2);
+
+shop.qoldiq(); 
+shop.sotish("non", 3); 
+shop.qabul("cola", 4); 
+shop.qoldiq(); 

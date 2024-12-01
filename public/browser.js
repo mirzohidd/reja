@@ -9,7 +9,6 @@ function itemTemplate(item) {
   </li>`;
 }
 let createField = document.getElementById("create-field");
-// console.log()
 document.getElementById("create-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -33,7 +32,6 @@ document.addEventListener("click", function (e) {
   // delete operation
   if (e.target.classList.contains("delete-btn")) {
     e.preventDefault();
-
     if (confirm("Are you sure delete this goal?")) {
       axios
         .post("delete-item", { id: e.target.getAttribute("data-id") })
@@ -50,7 +48,38 @@ document.addEventListener("click", function (e) {
 
   if (e.target.classList.contains("edit-btn")) {
     e.preventDefault();
-
-    alert("Siz edit knopkasini bosdiz");
+    let userInput = prompt(
+      "O'zgartirishni kiriting",
+      e.target.parentElement.parentElement.querySelector(".task-text").innerHTML
+    );
+    if (userInput) {
+      axios
+        .post("/edit-item", {
+          id: e.target.getAttribute("data-id"),
+          new_input: userInput,
+        })
+        .then((response) => {
+          e.target.parentElement.parentElement.querySelector(
+            ".task-text"
+          ).innerHTML = userInput;
+        })
+        .createField((err) => {
+          console.log(err);
+        });
+    }
   }
+});
+
+document.getElementById("delete-all").addEventListener("click", function (e) {
+
+    
+  axios
+    .post("/delete-all", { delete_all: true })
+    .then((response) => {
+      alert(response.data.status);
+      document.location.reload();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
