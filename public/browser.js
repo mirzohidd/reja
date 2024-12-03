@@ -48,10 +48,9 @@ document.addEventListener("click", function (e) {
 
   if (e.target.classList.contains("edit-btn")) {
     e.preventDefault();
-    let userInput = prompt(
-      "O'zgartirishni kiriting",
-      e.target.parentElement.parentElement.querySelector(".task-text").innerHTML
-    );
+    console.log(e.target.parentElement.parentElement.querySelector(".task-text").innerHTML);
+    let userInput = prompt("O'zgartirishni kiriting",e.target.parentElement.parentElement.querySelector(".task-text").innerHTML);
+    console.log(userInput)
     if (userInput) {
       axios
         .post("/edit-item", {
@@ -63,7 +62,7 @@ document.addEventListener("click", function (e) {
             ".task-text"
           ).innerHTML = userInput;
         })
-        .createField((err) => {
+        .catch((err) => {
           console.log(err);
         });
     }

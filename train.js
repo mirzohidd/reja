@@ -183,69 +183,78 @@ console.log("TRAIN Area !");
 
 // checkContent("mitgroup", "gmtiprou");
 
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.products = {
+//       non: non,
+//       lagmon: lagmon,
+//       cola: cola,
+//     };
+//   }
 
+//   qoldiq() {
+//     const currentTime = new Date().toLocaleTimeString();
+//     const { non, lagmon, cola } = this.products;
+//     console.log(
+//       `Hozir ${currentTime}da ${non}ta non, ${lagmon}ta lagmon va ${cola}ta cola mavjud!`
+//     );
+//     return this.products;
+//   }
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.products = {
-      non: non,
-      lagmon: lagmon,
-      cola: cola,
-    };
+//   sotish(mahsulot, miqdor) {
+//     const currentTime = new Date().toLocaleTimeString();
+
+//     if (this.products[mahsulot] === undefined) {
+//       console.log(`Bunday mahsulot mavjud emas: ${mahsulot}`);
+//       return;
+//     }
+
+//     if (this.products[mahsulot] < miqdor) {
+//       console.log(
+//         `Hozir ${currentTime}da ${mahsulot} yetarli emas, bor-yo‘g‘i ${this.products[mahsulot]}ta mavjud.`
+//       );
+//       return;
+//     }
+
+//     this.products[mahsulot] -= miqdor;
+//     console.log(
+//       `Hozir ${currentTime}da ${miqdor}ta ${mahsulot} sotildi. Hozirda ${this.products[mahsulot]}ta qoldi.`
+//     );
+//   }
+
+//   qabul(mahsulot, miqdor) {
+//     const currentTime = new Date().toLocaleTimeString();
+
+//     if (this.products[mahsulot] === undefined) {
+//       console.log(`Bunday mahsulot mavjud emas: ${mahsulot}`);
+//       return;
+//     }
+
+//     this.products[mahsulot] += miqdor;
+//     console.log(
+//       `Hozir ${currentTime}da ${miqdor}ta ${mahsulot} qabul qilindi. Hozirda ${this.products[mahsulot]}ta mavjud.`
+//     );
+//   }
+// }
+
+// const shop = new Shop(4, 5, 2);
+
+// shop.qoldiq();
+// shop.sotish("non", 3);
+// shop.qabul("cola", 4);
+// shop.qoldiq();
+
+// E-TASK:
+
+// Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+// MASALAN: getReverse("hello") return qilsin "olleh"
+
+function getReverse(word) {
+  let reversedWord = "";
+  for (let i = 0; i < word.length; i++) {
+    reversedWord = word[i] + reversedWord;
   }
-
-
-  qoldiq() {
-    const currentTime = new Date().toLocaleTimeString(); 
-    const { non, lagmon, cola } = this.products;
-    console.log(
-      `Hozir ${currentTime}da ${non}ta non, ${lagmon}ta lagmon va ${cola}ta cola mavjud!`
-    );
-    return this.products;
-  }
-
- 
-  sotish(mahsulot, miqdor) {
-    const currentTime = new Date().toLocaleTimeString(); 
-
-    if (this.products[mahsulot] === undefined) {
-      console.log(`Bunday mahsulot mavjud emas: ${mahsulot}`);
-      return;
-    }
-
-    if (this.products[mahsulot] < miqdor) {
-      console.log(
-        `Hozir ${currentTime}da ${mahsulot} yetarli emas, bor-yo‘g‘i ${this.products[mahsulot]}ta mavjud.`
-      );
-      return;
-    }
-
-    this.products[mahsulot] -= miqdor;
-    console.log(
-      `Hozir ${currentTime}da ${miqdor}ta ${mahsulot} sotildi. Hozirda ${this.products[mahsulot]}ta qoldi.`
-    );
-  }
-
- 
-  qabul(mahsulot, miqdor) {
-    const currentTime = new Date().toLocaleTimeString(); 
-
-    if (this.products[mahsulot] === undefined) {
-      console.log(`Bunday mahsulot mavjud emas: ${mahsulot}`);
-      return;
-    }
-
-    this.products[mahsulot] += miqdor;
-    console.log(
-      `Hozir ${currentTime}da ${miqdor}ta ${mahsulot} qabul qilindi. Hozirda ${this.products[mahsulot]}ta mavjud.`
-    );
-  }
+  console.log(reversedWord);
 }
 
-
-const shop = new Shop(4, 5, 2);
-
-shop.qoldiq(); 
-shop.sotish("non", 3); 
-shop.qabul("cola", 4); 
-shop.qoldiq(); 
+getReverse("ssdd");
