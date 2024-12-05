@@ -1,3 +1,5 @@
+const e = require("express");
+
 console.log("TRAIN Area !");
 
 // A-TASK:
@@ -249,12 +251,43 @@ console.log("TRAIN Area !");
 // Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
 // MASALAN: getReverse("hello") return qilsin "olleh"
 
-function getReverse(word) {
-  let reversedWord = "";
-  for (let i = 0; i < word.length; i++) {
-    reversedWord = word[i] + reversedWord;
-  }
-  console.log(reversedWord);
-}
+// function getReverse(word) {
+//   let reversedWord = "";
+//   for (let i = 0; i < word.length; i++) {
+//     reversedWord = word[i] + reversedWord;
+//   }
+//   console.log(reversedWord);
+// }
 
-getReverse("ssdd");
+// getReverse("ssdd");
+
+// F-TASK:
+
+// Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
+// MASALAN: getReverse("hello") return true
+
+// function findDoublers(word) {
+//   let count = 0;
+//   let newArr = [...word]
+
+// }
+// findDoublers("hello");
+
+function findDoublers(str) {
+  const charCount = [];
+
+  for (let char of str) {
+    if (charCount[char]) {
+      
+      return true;
+    } else {
+      
+      // Belgini birinchi marta uchratganimizda hisoblash
+      charCount[char] = 1;
+    }
+  }
+
+  return false;
+}
+console.log(findDoublers("hello"));
+console.log(findDoublers("sa"));
